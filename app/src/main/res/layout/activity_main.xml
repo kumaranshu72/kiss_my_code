@@ -11,7 +11,13 @@
     tools:context="example.com.stimmung.MainActivity">
 
     <TextView
+        android:text="Current Mood"
+        android:textSize="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="86dp"
+        android:id="@+id/heading" />
+
 </RelativeLayout>
