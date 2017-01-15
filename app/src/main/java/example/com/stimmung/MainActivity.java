@@ -8,12 +8,16 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getName();
 
     private MyPhoneReceiver reciever;
     static final int REQUEST_CODE=1;
+    private String mood;
 
 
     @Override
@@ -45,10 +49,29 @@ public class MainActivity extends AppCompatActivity {
             }
 
         }
+        TextView moodView =(TextView) findViewById(R.id.textView3);
+        mood = (String)moodView.getText();
     }
     public void openDetails(View view)
     {
+        RadioButton r1= (RadioButton) findViewById(R.id.radioButton);
+        RadioButton r2= (RadioButton) findViewById(R.id.radioButton4);
+        RadioButton r3= (RadioButton) findViewById(R.id.radioButton5);
+        if(r1.isChecked())
+        {
+            mood =(String)r1.getText();
+        }
+        else if(r2.isChecked())
+        {
+            mood =(String)r2.getText();
+        }
+        else if(r3.isChecked())
+        {
+            mood =(String)r3.getText();
+        }
+
         Intent intent = new Intent(this, DetailsActivity.class);
+        intent.putExtra("mood",mood);
         startActivity(intent);
     }
 }

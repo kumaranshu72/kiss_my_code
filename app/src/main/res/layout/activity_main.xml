@@ -13,7 +13,7 @@
     tools:context="example.com.stimmung.MainActivity">
 
     <TextView
-        android:text="( Happy )"
+        android:text="Happy"
         android:textSize="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

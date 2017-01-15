@@ -32,12 +32,14 @@ import static android.R.attr.resource;
 
 public class MoviesActivity extends AppCompatActivity {
     public static MoviesAdapter mForecastAdapter;
+    private String mood;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movies);
-        getMovies("sad");
+        mood=getIntent().getStringExtra("mood");
+        getMovies(mood);
         //getList();
     }
 

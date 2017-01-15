@@ -27,12 +27,13 @@ public class DetailsActivity extends AppCompatActivity {
     final static int RQS_PICK = 3;
     final static int RQS_PERMISSION_READ_EXTERNAL_STORAGE = 4;
     final static int MY_PERMISSIONS_REQUEST_WRITE_SETTINGS = 5;
+    private String mood;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
         setOnClickListeners();
-
+        mood = getIntent().getStringExtra("mood");
     }
     private void setOnClickListeners(){
         LinearLayout linearLayout =(LinearLayout) findViewById (R.id.movies_layer);
@@ -53,17 +54,20 @@ public class DetailsActivity extends AppCompatActivity {
                 if(view.getId()==R.id.movies_layer)
                 {
                     openDetail = new Intent(getApplication(),MoviesActivity.class);
+                    openDetail.putExtra("mood",mood);
                     Toast.makeText(getApplication(), "Movies", Toast.LENGTH_LONG).show();
                     startActivity(openDetail);
                 }
                 else if(view.getId()==R.id.songs_layer){
                     openDetail = new Intent(getApplication(),SongsActivity.class);
                     Toast.makeText(getApplication(), "Songs", Toast.LENGTH_LONG).show();
+                    openDetail.putExtra("mood",mood);
                     startActivity(openDetail);
                 }
                 else if(view.getId()==R.id.articles_layer){
                     openDetail = new Intent(getApplication(),ArticlesActivity.class);
                     Toast.makeText(getApplication(), "articles", Toast.LENGTH_LONG).show();
+                    openDetail.putExtra("mood",mood);
                     startActivity(openDetail);
                 }
                 else if(view.getId()==R.id.set_ringtone_layer){
