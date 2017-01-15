@@ -6,11 +6,10 @@
     android:id="@+id/list_item_forcast_text_view"
     android:minHeight="40sp"
     android:elevation="6dp"
-    android:paddingBottom="10dp"
-    android:background="#9fa8da"
+    android:paddingBottom="8dp"
+    android:background="@color/white"
     android:textColor="#000000"
-    android:textSize="32dp"
-    >
+    android:textSize="32dp">
 
 
 </TextView>
